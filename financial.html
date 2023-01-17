@@ -1,9 +1,32 @@
+<?php
+ 
+$dataPoints = array(
+
+    array("y" => 300000, "label" => "November"),
+    array("y" => 950000, "label" => "Desember"),
+    array("y" => 0, "label" => "January"),
+    array("y" => 0, "label" => "February"),
+    array("y" => 0, "label" => "March"),
+    array("y" => 0, "label" => "April"),
+    array("y" => 0, "label" => "May"),
+    array("y" => 0, "label" => "June"),
+    array("y" => 0, "label" => "July"),
+    array("y" => 0, "label" => "August"),
+    array("y" => 0, "label" => "September"),
+    array("y" => 0, "label" => "October"),
+
+
+);
+ 
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title><3</title>
+    <title>ABOUT US</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -29,37 +52,33 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 
-<script type="text/javascript">
-flag=1
-function f1()
-{
-    alert("Thank you for being my girlfriend")
-}
-function f()
-{
-    if(flag==1)
-        {
-            Bn.style.top=400
-            Bn.style.left=200
-            flag=2
-        }
-    else if(flag==2)
-        {
-            Bn.style.top=600
-            Bn.style.left=200
-            flag=3
-        }
-    else if(flag==3)
-        {
-            Bn.style.top=400
-            Bn.style.left=400
-            flag=1
-        }
+    <script>
+window.onload = function () {
+ 
+var chart = new CanvasJS.Chart("chartContainer", {
+    title: {
+        text: "Monthly Savings Reports"
+    },
+    axisY: {
+        title: "Savings Amounts"
+    },
+    data: [{
+        type: "line",
+        dataPoints: <?php echo json_encode($dataPoints, JSON_NUMERIC_CHECK); ?>
+    }]
+});
+chart.render();
+ 
 }
 </script>
-
+    
 </head>
+
 <body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
     <!-- header-start -->
     <header>
         <div class="header-area ">
@@ -83,7 +102,7 @@ function f()
                                             <li><a class="" href="#">Destination</a></l/li>
                                             <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                        <li><a href="financial.html">Financial</a></li>
+                                                        <li><a href="financial.php">Financial</a></li>
                                                         <li><a href="#">Wishlist</a></li>
                                                 </ul>
                                             </li>
@@ -130,36 +149,212 @@ function f()
         </div>
     </header>
     <!-- header-end -->
-    <body style="margin-bottom: 300px;">
-<h1 style="color:white;">  </h1>
-<figure style="margin-top: 100px;">
-<img src="img/dibuka.jpg" style="margin-bottom: 30px; width: 200px; height: 300px;"  />
-<figcaption style="color:white; margin-bottom: 200px;"> <h6><b> Would You Be Mine <3 ? </b></h6></figcaption>
-</figure>
-<div style="margin-top:50px;">
-<div id="By" style="position:absolute; left:64px; top:650px; width:210px;
-height:210px;">
-<a href="https://api.whatsapp.com/send?phone=6281291436378&text=yes,%20i%20Wanna%20be%20yours%0Ai%20love%20you%20<3" class="boxed-btn3"  value=" YA " onClick="f1()" > Yes </a>
-</div>
-<div ID="Bn" style="position:absolute; left:166px; top:650px; width:210px; height:210px;">
-    <a href="#" class="boxed-btn3" value=" TIDAK " onMouseOver="f()" >No</a>
-</div>
-</div>
-</body>
-  <footer class="footer">
+    <!--<div class="destination_banner_wrap overlay">
+        <div class="destination_text text-center">
+            <h3>Saintmartine Iceland</h3>
+            <p>Pixel perfect design with awesome contents</p>
+        </div>
+    </div> -->
+ 
+    <div id="chartContainer" style="height: 400px; width: 100%; margin-left: 50px; margin-right: 50px;"></div>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+    <div class="destination_details_info">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-9">
+                    <div class="destination_info">
+                        <h3>Description</h3>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
+                        <p>Variations of passages of lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
+                        <div class="single_destination">
+                            <h4>Day-01</h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                        </div>
+                        <div class="single_destination">
+                            <h4>Day-02</h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                        </div>
+                        <div class="single_destination">
+                            <h4>Day-03</h4>
+                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                        </div>
+                    </div>
+                    <div class="bordered_1px"></div>
+                    <div class="contact_join">
+                        <h3>Contact for join</h3>
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="single_input">
+                                        <input type="text" placeholder="Your Name">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="single_input">
+                                        <input type="text" placeholder="Phone no.">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="single_input">
+                                        <textarea name="" id="" cols="30" rows="10"placeholder="Message" ></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="submit_btn">
+                                        <button class="boxed-btn4" type="submit">submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- newletter_area_start  -->
+    <div class="newletter_area overlay">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-10">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5">
+                            <div class="newsletter_text">
+                                <h4>Subscribe Our Newsletter</h4>
+                                <p>Subscribe newsletter to get offers and about
+                                    new places to discover.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="mail_form">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-9 col-md-8">
+                                        <div class="newsletter_field">
+                                            <input type="email" placeholder="Your mail" >
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+                                        <div class="newsletter_btn">
+                                            <button class="boxed-btn4 " type="submit" >Subscribe</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- newletter_area_end  -->
+
+    <div class="popular_places_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center mb_70">
+                        <h3>More Places</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_place">
+                        <div class="thumb">
+                            <img src="img/place/1.png" alt="">
+                            <a href="#" class="prise">$500</a>
+                        </div>
+                        <div class="place_info">
+                            <a href="#"><h3>California</h3></a>
+                            <p>United State of America</p>
+                            <div class="rating_days d-flex justify-content-between">
+                                <span class="d-flex justify-content-center align-items-center">
+                                     <i class="fa fa-star"></i> 
+                                     <i class="fa fa-star"></i> 
+                                     <i class="fa fa-star"></i> 
+                                     <i class="fa fa-star"></i> 
+                                     <i class="fa fa-star"></i>
+                                     <a href="#">(20 Review)</a>
+                                </span>
+                                <div class="days">
+                                    <i class="fa fa-clock-o"></i>
+                                    <a href="#">5 Days</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_place">
+                        <div class="thumb">
+                            <img src="img/place/2.png" alt="">
+                            <a href="#" class="prise">$500</a>
+                        </div>
+                        <div class="place_info">
+                            <a href="#"><h3>Korola Megna</h3></a>
+                            <p>United State of America</p>
+                            <div class="rating_days d-flex justify-content-between">
+                                <span class="d-flex justify-content-center align-items-center">
+                                     <i class="fa fa-star"></i> 
+                                     <i class="fa fa-star"></i> 
+                                     <i class="fa fa-star"></i> 
+                                     <i class="fa fa-star"></i> 
+                                     <i class="fa fa-star"></i>
+                                     <a href="#">(20 Review)</a>
+                                </span>
+                                <div class="days">
+                                    <i class="fa fa-clock-o"></i>
+                                    <a href="#">5 Days</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_place">
+                        <div class="thumb">
+                            <img src="img/place/3.png" alt="">
+                            <a href="#" class="prise">$500</a>
+                        </div>
+                        <div class="place_info">
+                            <a href="#"><h3>London</h3></a>
+                            <p>United State of America</p>
+                            <div class="rating_days d-flex justify-content-between">
+                                <span class="d-flex justify-content-center align-items-center">
+                                     <i class="fa fa-star"></i> 
+                                     <i class="fa fa-star"></i> 
+                                     <i class="fa fa-star"></i> 
+                                     <i class="fa fa-star"></i> 
+                                     <i class="fa fa-star"></i>
+                                     <a href="#">(20 Review)</a>
+                                </span>
+                                <div class="days">
+                                    <i class="fa fa-clock-o"></i>
+                                    <a href="#">5 Days</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
         <div class="footer_top">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-md-6 col-lg-4 ">
                         <div class="footer_widget">
                             <div class="footer_logo">
-                                <a href="index.html">
-                                    <img src="img/logo.jpg" style="height: 100px; width: 100px; border-radius: 40%;" alt="">
+                                <a href="#">
+                                    <img src="img/footer_logo.png" alt="">
                                 </a>
                             </div>
-                            <p> ice BSD <br> Tanggerang, Indonesia <br>
-                                <a href="#">+62 812-9143-6378</a> <br>
-                                <a href="#">Juam.lim1007@gmail.com</a>
+                            <p>5th flora, 700/D kings road, green <br> lane New York-1782 <br>
+                                <a href="#">+10 367 826 2567</a> <br>
+                                <a href="#">contact@carpenter.com</a>
                             </p>
                             <div class="socail_links">
                                 <ul>
@@ -199,9 +394,10 @@ height:210px;">
                                 Company
                             </h3>
                             <ul class="links">
+                                <li><a href="#">Pricing</a></li>
                                 <li><a href="#">About</a></li>
                                 <li><a href="#"> Gallery</a></li>
-                                <li><a href="https://api.whatsapp.com/send?phone=6281291436378&text=Halo%20sayang%20u%20lagi%20apa%0Ai%20kangen"> Contact</a></li>
+                                <li><a href="#"> Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -211,14 +407,14 @@ height:210px;">
                                 Popular destination
                             </h3>
                             <ul class="links double_links">
-                                <li><a href="#">Puncak</a></li>
-                                <li><a href="#">Bandung</a></li>
-                                <li><a href="#">Malaysia</a></li>
-                                <li><a href="#">Jakarta Pusat</a></li>
-                                <li><a href="#">Jakarta Selatan</a></li>
-                                <li><a href="#">Jakarta Utara</a></li>
-                                <li><a href="#"></a>BSD</li>
-                                <li><a href="#">Jakarta Barat</a></li>
+                                <li><a href="#">Indonesia</a></li>
+                                <li><a href="#">America</a></li>
+                                <li><a href="#">India</a></li>
+                                <li><a href="#">Switzerland</a></li>
+                                <li><a href="#">Italy</a></li>
+                                <li><a href="#">Canada</a></li>
+                                <li><a href="#">Franch</a></li>
+                                <li><a href="#">England</a></li>
                             </ul>
                         </div>
                     </div>
@@ -339,4 +535,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         });
     </script>
 </body>
+
 </html>
